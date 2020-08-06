@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EE376FB2-5539-4FAF-BC51-747C5BEA8706}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Stockman</RootNamespace>
+    <AssemblyName>Stockman</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Stockman.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LumenWorks.Framework.IO, Version=3.8.0.0, Culture=neutral, PublicKeyToken=5ad3ea2f85776344, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Binaries\LumenWorks.Framework.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="RKLib.ExportData, Version=1.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Binaries\RKLib.ExportData.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Compilers, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Roslyn.Compilers.Common.1.1.20524.4\lib\net40\Roslyn.Compilers.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Compilers.CSharp, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Roslyn.Compilers.CSharp.1.1.20524.4\lib\net40\Roslyn.Compilers.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Services, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Roslyn.Services.Common.1.1.20524.4\lib\net40\Roslyn.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Services.CSharp, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Roslyn.Services.CSharp.1.1.20524.4\lib\net40\Roslyn.Services.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Utilities">
+      <HintPath>..\packages\Roslyn.Services.Common.1.1.20524.4\lib\net40\Roslyn.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\attributeMethods.cs" />
+    <Compile Include="Classes\databaseMethods.cs" />
+    <Compile Include="Classes\FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\InputBox.cs" />
+    <Compile Include="Classes\InputValidations.cs" />
+    <Compile Include="Classes\Levensthein.cs" />
+    <Compile Include="Classes\reportMethods.cs" />
+    <Compile Include="Entities\SpecialsOverrideColumns.cs" />
+    <Compile Include="Classes\stockItemMethods.cs" />
+    <Compile Include="Classes\supplierMethods.cs" />
+    <Compile Include="Classes\templateMethods.cs" />
+    <Compile Include="Entities\TableNames.cs" />
+    <Compile Include="frmReportEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportEditor.Designer.cs">
+      <DependentUpon>frmReportEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReports.Designer.cs">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AttributeProperty.cs" />
+    <Compile Include="Entities\Supplier.cs" />
+    <Compile Include="Entities\Templates.cs" />
+    <Compile Include="frmCalculationEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalculationEditor.Designer.cs">
+      <DependentUpon>frmCalculationEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmColumnMergeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmColumnMergeEditor.Designer.cs">
+      <DependentUpon>frmColumnMergeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConditionalFormattingEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConditionalFormattingEditor.Designer.cs">
+      <DependentUpon>frmConditionalFormattingEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDatabaseEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDatabaseEditor.Designer.cs">
+      <DependentUpon>frmDatabaseEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExportData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExportData.Designer.cs">
+      <DependentUpon>frmExportData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmImportData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportData.Designer.cs">
+      <DependentUpon>frmImportData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSpecialsCalculationEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSpecialsCalculationEditor.Designer.cs">
+      <DependentUpon>frmSpecialsCalculationEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatus.Designer.cs">
+      <DependentUpon>frmStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStockItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStockItems.Designer.cs">
+      <DependentUpon>frmStockItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSuppliers.Designer.cs">
+      <DependentUpon>frmSuppliers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSystem.Designer.cs">
+      <DependentUpon>frmSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTemplates_editImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTemplates_editImport.Designer.cs">
+      <DependentUpon>frmTemplates_editImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTemplates_Create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTemplates_Create.Designer.cs">
+      <DependentUpon>frmTemplates_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTemplates_editExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTemplates_editExport.Designer.cs">
+      <DependentUpon>frmTemplates_editExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="START.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="START.Designer.cs">
+      <DependentUpon>START.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmReportEditor.resx">
+      <DependentUpon>frmReportEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReports.resx">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalculationEditor.resx">
+      <DependentUpon>frmCalculationEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmColumnMergeEditor.resx">
+      <DependentUpon>frmColumnMergeEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConditionalFormattingEditor.resx">
+      <DependentUpon>frmConditionalFormattingEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDatabaseEditor.resx">
+      <DependentUpon>frmDatabaseEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExportDAta.resx">
+      <DependentUpon>frmExportData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImportData.resx">
+      <DependentUpon>frmImportData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSpecialsCalculationEditor.resx">
+      <DependentUpon>frmSpecialsCalculationEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatus.resx">
+      <DependentUpon>frmStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStockItems.resx">
+      <DependentUpon>frmStockItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSuppliers.resx">
+      <DependentUpon>frmSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSystem.resx">
+      <DependentUpon>frmSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTemplates_editImport.resx">
+      <DependentUpon>frmTemplates_editImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTemplates_Create.resx">
+      <DependentUpon>frmTemplates_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTemplates_editExport.resx">
+      <DependentUpon>frmTemplates_editExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="START.resx">
+      <DependentUpon>START.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="File Originals\app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Reports\stockOverview.xlsx" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Binaries\CalcEngine.dll" />
+    <Content Include="Binaries\LumenWorks.Framework.IO.dll" />
+    <Content Include="Binaries\RKLib.ExportData.dll" />
+    <Content Include="Binaries\Roslyn.Compilers.CSharp.dll" />
+    <Content Include="Binaries\Roslyn.Compilers.CSharp.xml" />
+    <Content Include="Binaries\Roslyn.Compilers.dll" />
+    <Content Include="Binaries\Roslyn.Compilers.xml" />
+    <Content Include="Binaries\Roslyn.Services.CSharp.dll" />
+    <Content Include="Binaries\Roslyn.Services.CSharp.xml" />
+    <Content Include="Binaries\Roslyn.Services.dll" />
+    <Content Include="Binaries\Roslyn.Services.xml" />
+    <Content Include="Binaries\Roslyn.Utilities.dll" />
+    <Content Include="Binaries\Roslyn.Utilities.xml" />
+    <Content Include="File Originals\database generation.sql" />
+    <Content Include="File Originals\table generation.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
